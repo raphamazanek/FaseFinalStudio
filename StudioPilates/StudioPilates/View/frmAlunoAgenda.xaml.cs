@@ -59,7 +59,7 @@ namespace StudioPilates.View
             dataGrid.ItemsSource = lista;
 
             cmbAula.Text = null;
-            cmbAula.Text = null;
+            cmbAluno.Text = null;
         }
 
         private void btnDeletar_Click(object sender, RoutedEventArgs e)
@@ -84,8 +84,8 @@ namespace StudioPilates.View
         private void dataGrid_Loaded(object sender, RoutedEventArgs e)
         {
             var lista = AlunoAgendaDAO.ReturnLista();
-            if(AlunoAgendaDAO.ReturnLista() != null)
-            {
+            if (AlunoAgendaDAO.ReturnLista() != null)
+            { 
                 dataGrid.ItemsSource = lista;
             }
             else
