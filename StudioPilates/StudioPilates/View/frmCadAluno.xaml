@@ -1,0 +1,45 @@
+﻿<Window x:Class="StudioPilates.View.frmCadAluno"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StudioPilates.View"
+      mc:Ignorable="d"
+      Title="Cadastro Aluno" Height="576.933" Width="549.216">
+
+    <Grid Background="White" Margin="9,5,13,8">
+        <Label x:Name="lblNome" Content="NOME" HorizontalAlignment="Left" Margin="55,112,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSobrenome" Content="SOBRENOME" HorizontalAlignment="Left" Margin="202,112,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCPF" Content="CPF" HorizontalAlignment="Left" Margin="378,112,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblNasc" Content="NASC" HorizontalAlignment="Left" Margin="56,173,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCelular" Content="CELULAR" HorizontalAlignment="Left" Margin="212,173,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblTelefone" Content="TELEFONE" HorizontalAlignment="Left" Margin="352,174,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label x:Name="lblAvaliacaoFisica" Content="AVALIAÇÃO FÍSICA" HorizontalAlignment="Left" Margin="177,280,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCadastroAluno" Content="Cadastro Aluno" HorizontalAlignment="Left" Margin="150,-5,0,0" VerticalAlignment="Top" Height="34" Width="180" FontFamily="Arial Rounded MT Bold" FontSize="18.667"/>
+        <Label x:Name="lblEndereco" Content="ENDEREÇO" HorizontalAlignment="Left" Margin="24,379,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblEmail" Content="E-MAIL" HorizontalAlignment="Left" Margin="23,238,0,0" VerticalAlignment="Top"/>
+        <Grid Margin="19,136,22,-1">
+            <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="4,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5"/>
+            <TextBox x:Name="txtSobrenme" HorizontalAlignment="Left" Height="23" Margin="161,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtCPF" HorizontalAlignment="Left" Height="23" Margin="323,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtCeular" HorizontalAlignment="Left" Height="23" Margin="168,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtTelefone" HorizontalAlignment="Left" Height="23" Margin="319,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtAvaliacaoFisica" HorizontalAlignment="Left" Height="57" Margin="8,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="430"/>
+            <TextBox x:Name="txtEndereco" HorizontalAlignment="Left" Height="57" Margin="80,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+            <DatePicker x:Name="dtNasc" HorizontalAlignment="Left" Margin="0,66,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="24" Margin="66,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240"/>
+
+            <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="12,316,0,0" VerticalAlignment="Top" Width="90" Height="28" IsEnabled="False" Click="btnCancelar_Click"/>
+            <Button x:Name="btnRemover" Content="Remover" HorizontalAlignment="Left" Margin="124,316,0,0" VerticalAlignment="Top" Width="90" Height="28" IsEnabled="False" Click="btnRemover_Click"/>
+            <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="241,316,0,0" VerticalAlignment="Top" Width="90" Height="28" IsEnabled="False" Click="btnAlterar_Click"/>
+            <Button x:Name="btnGravar" Content="Gravar" HorizontalAlignment="Left" Margin="361,316,0,0" VerticalAlignment="Top" Width="90" Height="28" Click="btnGravar_Click"/>
+            <ComboBox x:Name="cmbPlano" HorizontalAlignment="Left" Margin="285,243,0,0" VerticalAlignment="Top" Width="153" SelectedValuePath="PlanoId" DisplayMemberPath="Nome" Loaded="cmbPlano_Loaded"/>
+
+        </Grid>
+        <TextBox x:Name="txtBuscarAluno" HorizontalAlignment="Left" Height="23" Margin="95,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="223"/>
+        <Separator HorizontalAlignment="Left" Height="24" Margin="1,87,0,0" VerticalAlignment="Top" Width="517"/>
+        <Label x:Name="lblBuscarCPFAluno" Content="CPF" HorizontalAlignment="Left" Margin="37,42,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnBuscarCPFAluno" Content="Buscar" HorizontalAlignment="Left" Margin="359,44,0,0" VerticalAlignment="Top" Width="75" Click="btnBuscarCPFAluno_Click"/>
+
+    </Grid>
+</Window>

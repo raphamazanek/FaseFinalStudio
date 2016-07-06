@@ -1,0 +1,30 @@
+﻿<Window x:Class="StudioPilates.View.frmMontagemAgenda"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudioPilates.View"
+        mc:Ignorable="d"
+        Title="Montagem Agenda" Height="243.72" Width="440.425">
+    <Grid Margin="0,1,0,-2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="187*"/>
+            <ColumnDefinition Width="245*"/>
+        </Grid.ColumnDefinitions>
+        <DatePicker x:Name="DtInicial" HorizontalAlignment="Left" Margin="140,90,0,0" VerticalAlignment="Top" Height="24" Width="102" Grid.ColumnSpan="2" RenderTransformOrigin="0.676,0.583"/>
+        <DatePicker x:Name="DtFinal" HorizontalAlignment="Left" Margin="60,90,0,0" VerticalAlignment="Top" Grid.Column="1" Height="24" Width="102"/>
+        <Label x:Name="lblDtInicial" Content="Data Inicial" HorizontalAlignment="Left" Margin="140,59,0,0" VerticalAlignment="Top" Height="26" Width="68" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblDtFinal" Content="Data Final" HorizontalAlignment="Left" Margin="60,59,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="63"/>
+        <Label x:Name="lblInstrutor" Content="Instrutor" HorizontalAlignment="Left" Margin="65,115,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+        <ComboBox x:Name="cmbInstrutor" HorizontalAlignment="Left" Margin="140,119,0,0" VerticalAlignment="Top" Width="207" Grid.ColumnSpan="2" SelectedValuePath="InstrutorId"
+    DisplayMemberPath="Nome" Loaded="cmbInstrutor_Loaded" Height="22"/>
+        <Button x:Name="btnGravar" Content="Gravar" HorizontalAlignment="Left" Margin="38,161,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="btnGravar_Click"/>
+        <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Right" Margin="0,161,224,0" VerticalAlignment="Top" Width="75" Height="20" Click="btnAlterar_Click" Grid.ColumnSpan="2"/>
+        <Label x:Name="label" Content="Nome" HorizontalAlignment="Left" Margin="37,22,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNome" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="80,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241"/>
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="151,22,0,0" VerticalAlignment="Top" Width="68" Height="20" Click="btnBuscar_Click" Grid.Column="1"/>
+        <Button x:Name="btnRemover" Content="Deletar" HorizontalAlignment="Left" Margin="37,161,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="btnRemover_Click" Grid.Column="1"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="132,161,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="20" Click="btnCancelar_Click"/>
+
+    </Grid>
+</Window>
