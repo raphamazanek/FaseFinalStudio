@@ -13,7 +13,7 @@ namespace StudioPilates.Model
     {
         [Key]
         public int AlunoAgendaID { get; set; }
-        public int Agenda { get; set; }
-        public int Aluno { get; set; }
+        public string Agenda { get; set; }
+        public string Aluno { get; set; }
     }
 }

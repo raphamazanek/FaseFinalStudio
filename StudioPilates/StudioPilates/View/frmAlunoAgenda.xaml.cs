@@ -42,8 +42,8 @@ namespace StudioPilates.View
         {
             a = new AlunoAgenda();
 
-            a.Agenda = (int)cmbAula.SelectedValue;
-            a.Aluno = (int)cmbAluno.SelectedValue;
+            a.Agenda = (string)cmbAula.SelectedValue;
+            a.Aluno = (string)cmbAluno.SelectedValue;
 
             if (AlunoAgendaDAO.AdicionarAlunoAgenda(a))
             {
@@ -55,14 +55,44 @@ namespace StudioPilates.View
                 MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            cmbAula = null;
-            cmbAula = null;
+            var lista = AlunoAgendaDAO.ReturnLista();
+            dataGrid.ItemsSource = lista;
+
+            cmbAula.Text = null;
+            cmbAula.Text = null;
+        }
+
+        private void btnDeletar_Click(object sender, RoutedEventArgs e)
+        {
+            var a = ((Button)sender).DataContext as AlunoAgenda;
+            if (AlunoAgendaDAO.RemoverAlunoAgenda(a))
+            {
+                MessageBox.Show("Removido com sucesso!", "Cadastro de Agenda",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro ao deletar!", "Cadastro de Agenda",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            var lista = AlunoAgendaDAO.ReturnLista();
+            dataGrid.ItemsSource = lista;
+
         }
 
         private void dataGrid_Loaded(object sender, RoutedEventArgs e)
         {
             var lista = AlunoAgendaDAO.ReturnLista();
-            dataGrid.ItemsSource = lista;
+            if(AlunoAgendaDAO.ReturnLista() != null)
+            {
+                dataGrid.ItemsSource = lista;
+            }
+            else
+            {
+                MessageBox.Show("Não há dados!", "Cadastro de Agenda",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+            }            
         }
     }
 }

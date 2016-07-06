@@ -71,6 +71,11 @@
     <Compile Include="DAL\InstrutorDAO.cs" />
     <Compile Include="DAL\PlanoDAO.cs" />
     <Compile Include="DAL\Singleton.cs" />
+    <Compile Include="Migrations\201607061934028_StudioPilatesDB.cs" />
+    <Compile Include="Migrations\201607061934028_StudioPilatesDB.Designer.cs">
+      <DependentUpon>201607061934028_StudioPilatesDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Agenda.cs" />
     <Compile Include="Model\Aluno.cs" />
     <Compile Include="Model\AlunoAgenda.cs" />
@@ -137,6 +142,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201607061934028_StudioPilatesDB.resx">
+      <DependentUpon>201607061934028_StudioPilatesDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -151,8 +159,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Imagem\" />
+    <Resource Include="Imagem\imagem.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

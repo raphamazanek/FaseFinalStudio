@@ -38,19 +38,13 @@ namespace StudioPilates.DAL
         //verifica se aluno ja existe
         public static AlunoAgenda VerificaAlunoAgenda(AlunoAgenda a)
         {
-            return ctx.AlunoAgenda.FirstOrDefault(x => x.Aluno.Equals(a.Aluno));
+            return ctx.AlunoAgenda.FirstOrDefault(x => x.Aluno.Equals(a.Aluno) && x.Agenda.Equals(a.Agenda));
         }
 
         //busca lista de alunos
         public static List<AlunoAgenda> ReturnLista()
         {
-            try {
-                return ctx.AlunoAgenda.ToList();
-            }
-            catch
-            {
-                return null;
-            }
+                return ctx.AlunoAgenda.ToList();                     
         }
 
         //remove cadastro do aluno
