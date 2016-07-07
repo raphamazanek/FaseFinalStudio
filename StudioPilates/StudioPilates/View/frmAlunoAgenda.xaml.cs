@@ -40,26 +40,35 @@ namespace StudioPilates.View
 
         private void btnGravar_Click(object sender, RoutedEventArgs e)
         {
-            a = new AlunoAgenda();
 
-            a.Agenda = (string)cmbAula.SelectedValue;
-            a.Aluno = (string)cmbAluno.SelectedValue;
-
-            if (AlunoAgendaDAO.AdicionarAlunoAgenda(a))
+            if (cmbAula.SelectedValue != null && cmbAluno.SelectedValue != null)
             {
-                MessageBox.Show("Gravado com sucesso!", "Cadastro de Agenda",
-                MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else {
-                MessageBox.Show("Não foi possível gravar!", "Cadastro de Agenda",
-                MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+                a = new AlunoAgenda();
 
+                a.Agenda = (string)cmbAula.SelectedValue;
+                a.Aluno = (string)cmbAluno.SelectedValue;
+
+                if (AlunoAgendaDAO.AdicionarAlunoAgenda(a))
+                {
+                    MessageBox.Show("Gravado com sucesso!", "Cadastro de Agenda",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else {
+                    MessageBox.Show("Não foi possível gravar!", "Cadastro de Agenda",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                cmbAula.Text = null;
+                cmbAluno.Text = null;
+
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível gravar, preencha todos os campos!", "Cadastro de Agenda",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
             var lista = AlunoAgendaDAO.ReturnLista();
             dataGrid.ItemsSource = lista;
-
-            cmbAula.Text = null;
-            cmbAluno.Text = null;
         }
 
         private void btnDeletar_Click(object sender, RoutedEventArgs e)

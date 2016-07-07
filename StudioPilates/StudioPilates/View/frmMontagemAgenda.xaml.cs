@@ -60,26 +60,33 @@ namespace StudioPilates.View
         {
             a = new Agenda();
 
-            a.Aula = txtNome.Text;
-            a.DataInicio = DtInicial.Text;
-            a.DataFinal = DtFinal.Text;
-
-            a.Instrutor = (int)cmbInstrutor.SelectedValue;
-            
-            if (AgendaDAO.AdicionarAgenda(a))
+            if (txtNome.Text != null && DtInicial.Text != null && DtFinal.Text != null && cmbInstrutor.SelectedValue != null)
             {
-                MessageBox.Show("Gravado com sucesso!", "Cadastro de Agenda",
-                MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else {
-                MessageBox.Show("Não foi possível gravar!", "Cadastro de Agenda",
-                MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+                a.Aula = txtNome.Text;
+                a.DataInicio = DtInicial.Text;
+                a.DataFinal = DtFinal.Text;
+                a.Instrutor = (int)cmbInstrutor.SelectedValue;
 
-            txtNome.Clear();
-            DtInicial.Text = null;
-            DtFinal.Text = null;
-            cmbInstrutor.Text = null;
+                if (AgendaDAO.AdicionarAgenda(a))
+                {
+                    MessageBox.Show("Gravado com sucesso!", "Cadastro de Agenda",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else {
+                    MessageBox.Show("Não foi possível gravar!", "Cadastro de Agenda",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                txtNome.Clear();
+                DtInicial.Text = null;
+                DtFinal.Text = null;
+                cmbInstrutor.Text = null;
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível gravar, preencha todos os campos!", "Cadastro de Agenda",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)

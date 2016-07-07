@@ -120,9 +120,9 @@ namespace StudioPilates.View
         {
             a = new Aluno();
 
-            if (txtNome.Text != null && txtSobrenme != null && txtCPF.Text != null && dtNasc.Text != null
+            if (txtNome.Text != null && txtSobrenme.Text != null && txtCPF.Text != null && dtNasc.Text != null
                 && txtCeular.Text != null && txtTelefone.Text != null && txtAvaliacaoFisica.Text != null
-                && txtEndereco.Text != null && txtEmail != null && cmbPlano.Text != null)
+                && txtEndereco.Text != null && txtEmail.Text != null && cmbPlano.SelectedValue != null)
             {
                 a.Nome = txtNome.Text;
                 a.Sobrenome = txtSobrenme.Text;
@@ -133,7 +133,7 @@ namespace StudioPilates.View
                 a.AvaliacaoFisica = txtAvaliacaoFisica.Text;
                 a.Endereco = txtEndereco.Text;
                 a.Email = txtEmail.Text;
-                //a.Plano = (int)cmbPlano.SelectedValue;
+                a.Plano = (int)cmbPlano.SelectedValue;
 
                 if (AlunoDAO.AdicionarAluno(a))
                 {
@@ -160,7 +160,7 @@ namespace StudioPilates.View
             else
             {
                 MessageBox.Show("Não foi possível gravar, preencha todos os campos!", "Cadastro de Aluno",
-               MessageBoxButton.OK, MessageBoxImage.Error);
+               MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             
         }

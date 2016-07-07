@@ -109,35 +109,47 @@ namespace StudioPilates.View
 
         private void btnGravar_Click(object sender, RoutedEventArgs e)
         {
+
             i = new Instrutor();
 
-            i.Nome = txtNome.Text;
-            i.Sobrenome = txtSobrenome.Text;
-            i.CPF = txtCPF.Text;
-            i.Celular = txtCelular.Text;
-            i.DtNasc = DtNasc.Text;
-            i.Telefone = txtTelefone.Text;
-            i.Email = txtEmail.Text;
-            i.Endereco = txtEndereco.Text;
-
-            if (InstrutorDAO.AdicionarInstrutor(i))
+            if (txtNome.Text != null && txtSobrenome.Text != null && txtCPF.Text != null
+                && DtNasc.Text != null && txtCelular.Text != null && txtTelefone.Text != null
+                && txtEmail.Text != null && txtEndereco.Text != null)
             {
-                MessageBox.Show("Gravado com sucesso!", "Cadastro de Instrutor",
-                MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else {
-                MessageBox.Show("Não foi possível gravar!", "Cadastro de Instrutor",
-                MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+                
+                i.Nome = txtNome.Text;
+                i.Sobrenome = txtSobrenome.Text;
+                i.CPF = txtCPF.Text;
+                i.Celular = txtCelular.Text;
+                i.DtNasc = DtNasc.Text;
+                i.Telefone = txtTelefone.Text;
+                i.Email = txtEmail.Text;
+                i.Endereco = txtEndereco.Text;
 
-            txtNome.Clear();
-            txtSobrenome.Clear();
-            txtCPF.Clear();
-            DtNasc.Text = null;
-            txtCelular.Clear();
-            txtTelefone.Clear();
-            txtEmail.Clear();
-            txtEndereco.Clear();
+                if (InstrutorDAO.AdicionarInstrutor(i))
+                {
+                    MessageBox.Show("Gravado com sucesso!", "Cadastro de Instrutor",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else {
+                    MessageBox.Show("Não foi possível gravar!", "Cadastro de Instrutor",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                txtNome.Clear();
+                txtSobrenome.Clear();
+                txtCPF.Clear();
+                DtNasc.Text = null;
+                txtCelular.Clear();
+                txtTelefone.Clear();
+                txtEmail.Clear();
+                txtEndereco.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível gravar, preencha todos os campos!", "Cadastro de Instrutor",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void btnBuscarCPFInstrutor_Click(object sender, RoutedEventArgs e)

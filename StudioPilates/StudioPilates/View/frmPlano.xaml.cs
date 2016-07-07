@@ -95,24 +95,32 @@ namespace StudioPilates.View
         {
             p = new Plano();
 
-            p.Nome = txtNome.Text;
-            p.Descricao = txtDescricao.Text;
-
-            if (PlanoDAO.AdicionarPlano(p))
+            if (txtNome.Text != null && txtDescricao.Text != null)
             {
-                MessageBox.Show("Gravado com sucesso!", "Cadastro de Plano",
-                MessageBoxButton.OK, MessageBoxImage.Information);
 
+                p.Nome = txtNome.Text;
+                p.Descricao = txtDescricao.Text;
+
+                if (PlanoDAO.AdicionarPlano(p))
+                {
+                    MessageBox.Show("Gravado com sucesso!", "Cadastro de Plano",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível gravar!", "Cadastro de Plano",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                txtNome.Clear();
+                txtDescricao.Clear();
             }
             else
             {
-                MessageBox.Show("Não foi possível gravar!", "Cadastro de Plano",
-                MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Não foi possível gravar, preencha todos os campos!", "Cadastro de Plano",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-            txtNome.Clear();
-            txtDescricao.Clear();
-            txtBusca.Clear();
         }
 
 
