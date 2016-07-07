@@ -119,40 +119,50 @@ namespace StudioPilates.View
         private void btnGravar_Click(object sender, RoutedEventArgs e)
         {
             a = new Aluno();
-            
-            a.Nome = txtNome.Text;
-            a.Sobrenome = txtSobrenme.Text;
-            a.CPF = txtCPF.Text;
-            a.DtNasc = dtNasc.Text;
-            a.Celular = txtCeular.Text;
-            a.Telefone = txtTelefone.Text;
-            a.AvaliacaoFisica = txtAvaliacaoFisica.Text;
-            a.Endereco = txtEndereco.Text;
-            a.Email = txtEmail.Text;
-            a.Plano = (int)cmbPlano.SelectedValue;
 
-            if (AlunoDAO.AdicionarAluno(a))
+            if (txtNome.Text != null && txtSobrenme != null && txtCPF.Text != null && dtNasc.Text != null
+                && txtCeular.Text != null && txtTelefone.Text != null && txtAvaliacaoFisica.Text != null
+                && txtEndereco.Text != null && txtEmail != null && cmbPlano.Text != null)
             {
-                MessageBox.Show("Gravado com sucesso!", "Cadastro de Aluno",
-                MessageBoxButton.OK, MessageBoxImage.Information);
+                a.Nome = txtNome.Text;
+                a.Sobrenome = txtSobrenme.Text;
+                a.CPF = txtCPF.Text;
+                a.DtNasc = dtNasc.Text;
+                a.Celular = txtCeular.Text;
+                a.Telefone = txtTelefone.Text;
+                a.AvaliacaoFisica = txtAvaliacaoFisica.Text;
+                a.Endereco = txtEndereco.Text;
+                a.Email = txtEmail.Text;
+                //a.Plano = (int)cmbPlano.SelectedValue;
 
+                if (AlunoDAO.AdicionarAluno(a))
+                {
+                    MessageBox.Show("Gravado com sucesso!", "Cadastro de Aluno",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível gravar!", "Cadastro de Aluno",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                txtNome.Clear();
+                txtSobrenme.Clear();
+                txtCPF.Clear();
+                dtNasc.Text = null;
+                txtCeular.Clear();
+                txtTelefone.Clear();
+                txtEmail.Clear();
+                txtAvaliacaoFisica.Clear();
+                txtEndereco.Clear();
+                cmbPlano.SelectedValue = null;
             }
             else
             {
-                MessageBox.Show("Não foi possível gravar!", "Cadastro de Aluno",
-                MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Não foi possível gravar, preencha todos os campos!", "Cadastro de Aluno",
+               MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-            txtNome.Clear();
-            txtSobrenme.Clear();
-            txtCPF.Clear();
-            dtNasc.Text = null;
-            txtCeular.Clear();
-            txtTelefone.Clear();
-            txtEmail.Clear();
-            txtAvaliacaoFisica.Clear();
-            txtEndereco.Clear();
-            cmbPlano.SelectedValue = null;
+            
         }
 
         private void btnBuscarCPFAluno_Click(object sender, RoutedEventArgs e)

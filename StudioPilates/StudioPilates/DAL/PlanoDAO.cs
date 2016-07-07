@@ -45,7 +45,15 @@ namespace StudioPilates.DAL
         //busca lista de Planos
         public static List<Plano> ReturnLista()
         {
-            return ctx.Plano.ToList();
+            try
+            {
+                return ctx.Plano.ToList();
+            }
+            catch
+            {
+                return null;
+            }
+
         }
 
         //remove cadastro do Plano

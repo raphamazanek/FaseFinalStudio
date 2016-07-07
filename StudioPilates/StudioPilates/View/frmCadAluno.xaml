@@ -19,21 +19,21 @@
         <Label x:Name="lblEndereco" Content="ENDEREÇO" HorizontalAlignment="Left" Margin="24,379,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblEmail" Content="E-MAIL" HorizontalAlignment="Left" Margin="23,238,0,0" VerticalAlignment="Top"/>
         <Grid Margin="19,136,22,-1">
-            <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="4,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5"/>
-            <TextBox x:Name="txtSobrenme" HorizontalAlignment="Left" Height="23" Margin="161,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtCPF" HorizontalAlignment="Left" Height="23" Margin="323,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtCeular" HorizontalAlignment="Left" Height="23" Margin="168,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtTelefone" HorizontalAlignment="Left" Height="23" Margin="319,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtAvaliacaoFisica" HorizontalAlignment="Left" Height="57" Margin="8,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="430"/>
-            <TextBox x:Name="txtEndereco" HorizontalAlignment="Left" Height="57" Margin="80,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
-            <DatePicker x:Name="dtNasc" HorizontalAlignment="Left" Margin="0,66,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="24" Margin="66,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240"/>
+            <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="4,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5" AutomationProperties.IsRequiredForForm="True"/>
+            <TextBox x:Name="txtSobrenme" HorizontalAlignment="Left" Height="23" Margin="161,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.IsRequiredForForm="True"/>
+            <TextBox x:Name="txtCPF" HorizontalAlignment="Left" Height="23" Margin="323,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.IsRequiredForForm="True"/>
+            <TextBox x:Name="txtCeular" HorizontalAlignment="Left" Height="23" Margin="168,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.IsRequiredForForm="True"/>
+            <TextBox x:Name="txtTelefone" HorizontalAlignment="Left" Height="23" Margin="319,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" AutomationProperties.IsRequiredForForm="True"/>
+            <TextBox x:Name="txtAvaliacaoFisica" HorizontalAlignment="Left" Height="57" Margin="8,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="430" AutomationProperties.IsRequiredForForm="True"/>
+            <TextBox x:Name="txtEndereco" HorizontalAlignment="Left" Height="57" Margin="80,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" AutomationProperties.IsRequiredForForm="True"/>
+            <DatePicker x:Name="dtNasc" HorizontalAlignment="Left" Margin="0,66,0,0" VerticalAlignment="Top" AutomationProperties.IsRequiredForForm="True"/>
+            <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="24" Margin="66,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" AutomationProperties.IsRequiredForForm="True"/>
 
             <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="12,316,0,0" VerticalAlignment="Top" Width="90" Height="28" IsEnabled="False" Click="btnCancelar_Click"/>
             <Button x:Name="btnRemover" Content="Remover" HorizontalAlignment="Left" Margin="124,316,0,0" VerticalAlignment="Top" Width="90" Height="28" IsEnabled="False" Click="btnRemover_Click"/>
             <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="241,316,0,0" VerticalAlignment="Top" Width="90" Height="28" IsEnabled="False" Click="btnAlterar_Click"/>
             <Button x:Name="btnGravar" Content="Gravar" HorizontalAlignment="Left" Margin="361,316,0,0" VerticalAlignment="Top" Width="90" Height="28" Click="btnGravar_Click"/>
-            <ComboBox x:Name="cmbPlano" HorizontalAlignment="Left" Margin="285,243,0,0" VerticalAlignment="Top" Width="153" SelectedValuePath="PlanoId" DisplayMemberPath="Nome" Loaded="cmbPlano_Loaded"/>
+            <ComboBox x:Name="cmbPlano" HorizontalAlignment="Left" Margin="285,243,0,0" VerticalAlignment="Top" Width="153" SelectedValuePath="PlanoId" DisplayMemberPath="Nome" Loaded="cmbPlano_Loaded" AutomationProperties.IsRequiredForForm="True"/>
 
         </Grid>
         <TextBox x:Name="txtBuscarAluno" HorizontalAlignment="Left" Height="23" Margin="95,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="223"/>
