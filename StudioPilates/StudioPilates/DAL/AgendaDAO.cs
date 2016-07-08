@@ -40,7 +40,7 @@ namespace StudioPilates.DAL
         //verifica se aluno ja existe
         public static Agenda VerificaAgendaPorData(Agenda a)
         {
-            return ctx.Agenda.FirstOrDefault(x => x.DataInicio.Equals(a.DataInicio));
+            return ctx.Agenda.FirstOrDefault(x => x.DataInicio.Equals(a.DataInicio) && x.Instrutor.Equals(a.Instrutor));
         }
 
         public static Agenda VerificaAgendaPorNome(Agenda a)
